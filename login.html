@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | SK SHUVOJIT</title>
+  <style>
+    body {
+      background: black;
+      color: lime;
+      font-family: monospace;
+      text-align: center;
+      margin-top: 100px;
+    }
+    input {
+      padding: 8px;
+      margin: 5px;
+    }
+    button {
+      padding: 8px 20px;
+      background: lime;
+      color: black;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>☠️ SK SHUVOJIT ☠️</h1>
+  <h2>USER LOGIN</h2>
+  <input type="text" id="username" placeholder="Username"><br>
+  <input type="password" id="password" placeholder="Password"><br>
+  <button onclick="login()">Login</button>
+
+  <script>
+    const users = {
+      "ADMIN1": "ADMIN1",
+      "ADMIN2": "ADMIN2",
+      "ADMIN3": "ADMIN3",
+      "ADMIN4": "ADMIN4",
+      "ADMIN5": "ADMIN5",
+      "ADMIN6": "ADMIN6",
+      "ADMIN7": "ADMIN7",
+      "ADMIN8": "ADMIN8",
+      "ADMIN9": "ADMIN9",
+      "ADMIN10": "ADMIN10",
+      "ADMIN11": "ADMIN11",
+      "ADMIN12": "ADMIN12",
+      "ADMIN13": "ADMIN13",
+      "ADMIN14": "ADMIN14",
+      "ADMIN15": "ADMIN15",
+      "ADMIN16": "ADMIN16",
+      "ADMIN17": "ADMIN17",
+      "ADMIN18": "ADMIN18",
+      "ADMIN19": "ADMIN19",
+      "ADMIN20": "ADMIN20"
+    };
+
+    const names = {
+      "ADMIN1": "Monirul Islam",
+      "ADMIN2": "Pranto Mondal",
+      "ADMIN3": "Somiron Mondal",
+      "ADMIN4": "Partho Sarkar",
+      "ADMIN5": "TUFAN (SUB-ADMIN)",
+      "ADMIN6": "Nitish Kumar",
+      "ADMIN7": "Ariyan Bappy",
+      "ADMIN8": "RAJ",
+      "ADMIN9": "Rana Vai",
+      "ADMIN10": "Sudipto Mondal",
+      "ADMIN11": "Amdad Ahmed",
+      "ADMIN12": "Nirob Raj",
+      "ADMIN13": "Apurbo Sarkar",
+      "ADMIN14": "Avijit Mondal",
+      "ADMIN15": "Empty User 1",
+      "ADMIN16": "Empty User 2",
+      "ADMIN17": "Empty User 3",
+      "ADMIN18": "Empty User 4",
+      "ADMIN19": "Empty User 5",
+      "ADMIN20": "Empty User 6"
+    };
+
+    function login() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (users[username] && users[username] === password) {
+        localStorage.setItem("username", username);
+        window.location.href = "dashboard.html";
+      } else {
+        alert("Invalid credentials!");
+      }
+    }
+  </script>
+</body>
+</html>
