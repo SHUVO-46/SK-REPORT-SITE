@@ -1,94 +1,64 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <title>Login | SK SHUVOJIT</title>
-  <style>
-    body {
-      background: black;
-      color: lime;
-      font-family: monospace;
-      text-align: center;
-      margin-top: 100px;
-    }
-    input {
-      padding: 8px;
-      margin: 5px;
-    }
-    button {
-      padding: 8px 20px;
-      background: lime;
-      color: black;
-      border: none;
-      cursor: pointer;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SK SHUVOJIT - UID Report System</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>☠️ SK SHUVOJIT ☠️</h1>
-  <h2>USER LOGIN</h2>
-  <input type="text" id="username" placeholder="Username"><br>
-  <input type="password" id="password" placeholder="Password"><br>
-  <button onclick="login()">Login</button>
+  <div class="container">
+    <header>
+      <h1>☠️SK SHUVOJIT☠️</h1>
+      <a href="https://t.me/shuvojit46" target="_blank" class="telegram-btn">Contact: t.me/@shuvojit46</a>
+      <h2>FB ID SELL USER INFO</h2>
+    </header>
 
-  <script>
-    const users = {
-      "ADMIN1": "ADMIN1",
-      "ADMIN2": "ADMIN2",
-      "ADMIN3": "ADMIN3",
-      "ADMIN4": "ADMIN4",
-      "ADMIN5": "ADMIN5",
-      "ADMIN6": "ADMIN6",
-      "ADMIN7": "ADMIN7",
-      "ADMIN8": "ADMIN8",
-      "ADMIN9": "ADMIN9",
-      "ADMIN10": "ADMIN10",
-      "ADMIN11": "ADMIN11",
-      "ADMIN12": "ADMIN12",
-      "ADMIN13": "ADMIN13",
-      "ADMIN14": "ADMIN14",
-      "ADMIN15": "ADMIN15",
-      "ADMIN16": "ADMIN16",
-      "ADMIN17": "ADMIN17",
-      "ADMIN18": "ADMIN18",
-      "ADMIN19": "ADMIN19",
-      "ADMIN20": "ADMIN20"
-    };
+    <section class="user-login">
+      <h3>লগইন করুন</h3>
+      <form id="loginForm">
+        <input type="text" id="username" placeholder="Username (e.g. ADMIN1)" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit">লগইন</button>
+      </form>
+      <p id="loginMsg" class="msg"></p>
+    </section>
 
-    const names = {
-      "ADMIN1": "Monirul Islam",
-      "ADMIN2": "Pranto Mondal",
-      "ADMIN3": "Somiron Mondal",
-      "ADMIN4": "Partho Sarkar",
-      "ADMIN5": "TUFAN (SUB-ADMIN)",
-      "ADMIN6": "Nitish Kumar",
-      "ADMIN7": "Ariyan Bappy",
-      "ADMIN8": "RAJ",
-      "ADMIN9": "Rana Vai",
-      "ADMIN10": "Sudipto Mondal",
-      "ADMIN11": "Amdad Ahmed",
-      "ADMIN12": "Nirob Raj",
-      "ADMIN13": "Apurbo Sarkar",
-      "ADMIN14": "Avijit Mondal",
-      "ADMIN15": "Empty User 1",
-      "ADMIN16": "Empty User 2",
-      "ADMIN17": "Empty User 3",
-      "ADMIN18": "Empty User 4",
-      "ADMIN19": "Empty User 5",
-      "ADMIN20": "Empty User 6"
-    };
+    <section id="dashboard" class="hidden">
+      <h3 id="welcomeMsg"></h3>
 
-    function login() {
-      const username = document.getElementById("username").value.trim();
-      const password = document.getElementById("password").value.trim();
+      <div class="rate-info">
+        <p>30+ Friends Two Factor Report</p>
+        <p>Member Rate: <span id="memberRate">20</span> ৳</p>
+        <p>100+ ID Rate: <span id="hundredRate">15</span> ৳</p>
+      </div>
 
-      if (users[username] && users[username] === password) {
-        localStorage.setItem("username", username);
-        window.location.href = "dashboard.html";
-      } else {
-        alert("Invalid credentials!");
-      }
-    }
-  </script>
+      <textarea id="uidInput" placeholder="UID গুলো এখানে পেস্ট করুন..."></textarea>
+      <button id="checkReportBtn">Check Report</button>
+
+      <div id="reportSection" class="hidden">
+        <h4>Your Report</h4>
+        <table id="reportTable">
+          <thead>
+            <tr>
+              <th>YOUR TOTAL UID</th>
+              <th>OK/BACK</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+
+        <div class="summary">
+          <p>Total OK ID: <span id="totalOk">0</span></p>
+          <p>Total BACK ID: <span id="totalBack">0</span></p>
+          <p>Amount: <span id="amount">0</span> ৳</p>
+          <p>Total Amount: <span id="totalAmount">0</span> ৳</p>
+          <p class="warning">⚠️স্ক্রিনশট নিয়ে এডমিনের ইনবক্সে দিন, কিছুক্ষণের ভিতরে আপনার পেমেন্ট এপ্রুব হবে ধন্যবাদ⚠️</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
